@@ -1,0 +1,10 @@
+<nav>
+    <button (click)="page = 'eg-template-outlet'">Eg-template-outlet</button>
+    <button (click)="page = 'eg-onchanges'">Eg-template-outlet</button>
+
+</nav>
+
+<section>
+    <app-eg-template-outlet *ngIf="page === 'eg-template-outlet'"></app-eg-template-outlet>
+    <app-eg-onchanges *ngIf="page === 'eg-onchanges'"></app-eg-onchanges>
+</section>
