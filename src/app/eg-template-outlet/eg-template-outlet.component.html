@@ -1,1 +1,172 @@
-<p>eg-template-outlet works!</p>
+
+
+  <h1>Angular 15 - ngTemplateOutlet Demo</h1>
+
+  <p>
+    Same ProductListComponent, different UI templates.
+  </p>
+
+  <div class="tabs">
+    <button
+      [class.active]="page === 'home'"
+      (click)="page = 'home'">
+      Home
+    </button>
+
+    <button
+      [class.active]="page === 'search'"
+      (click)="page = 'search'">
+      Search
+    </button>
+
+    <button
+      [class.active]="page === 'admin'"
+      (click)="page = 'admin'">
+      Admin
+    </button>
+  </div>
+
+
+  <!-- ======================================================
+       HOME: CARD STYLE A
+       ====================================================== -->
+
+  <ng-template #homeProduct let-product>
+
+    <div class="home-card">
+
+      <div class="emoji">📱</div>
+
+      <div>
+        <h3>{{ product.name }}</h3>
+
+        <p>{{ product.category }}</p>
+
+        <strong>
+          ₹{{ product.price | number }}
+        </strong>
+
+        <br>
+
+        <button [disabled]="!product.inStock">
+          {{ product.inStock ? 'Add to Cart' : 'Out of Stock' }}
+        </button>
+      </div>
+
+    </div>
+
+  </ng-template>
+
+
+  <!-- ======================================================
+       SEARCH: CARD STYLE B
+       ====================================================== -->
+
+  <ng-template #searchProduct let-product>
+
+    <div class="search-row">
+
+      <div>
+        <h3>{{ product.name }}</h3>
+        <small>{{ product.category }}</small>
+      </div>
+
+      <strong>
+        ₹{{ product.price | number }}
+      </strong>
+
+      <span
+        [class.available]="product.inStock"
+        [class.unavailable]="!product.inStock">
+
+        {{ product.inStock ? 'Available' : 'Unavailable' }}
+
+      </span>
+
+    </div>
+
+  </ng-template>
+
+
+  <!-- ======================================================
+       ADMIN: TABLE STYLE C
+       ====================================================== -->
+
+  <ng-template #adminProduct let-product>
+
+    <div class="admin-row">
+
+      <span>{{ product.id }}</span>
+
+      <strong>{{ product.name }}</strong>
+
+      <span>{{ product.category }}</span>
+
+      <span>₹{{ product.price | number }}</span>
+
+      <span>
+        {{ product.inStock ? 'YES' : 'NO' }}
+      </span>
+
+    </div>
+
+  </ng-template>
+
+
+  <!-- ======================================================
+       SAME COMPONENT - DIFFERENT TEMPLATE
+       ====================================================== -->
+
+  <section *ngIf="page === 'home'">
+
+    <h2>Home Page</h2>
+
+    <app-product-list
+      [products]="products"
+      [itemTemplate]="homeProduct">
+    </app-product-list>
+
+  </section>
+
+
+  <section *ngIf="page === 'search'">
+
+    <h2>Search Page</h2>
+
+    <app-product-list
+      [products]="products"
+      [itemTemplate]="searchProduct">
+    </app-product-list>
+
+  </section>
+
+
+  <section *ngIf="page === 'admin'">
+
+    <h2>Admin Page</h2>
+
+    <div class="admin-header">
+      <span>ID</span>
+      <span>Product</span>
+      <span>Category</span>
+      <span>Price</span>
+      <span>Stock</span>
+    </div>
+
+    <app-product-list
+      [products]="products"
+      [itemTemplate]="adminProduct">
+    </app-product-list>
+
+  </section>
+
+
+  <details class="payload">
+
+    <summary>See API payload</summary>
+
+    <pre>{{ products | json }}</pre>
+
+  </details>
+
+

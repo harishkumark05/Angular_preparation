@@ -1,0 +1,19 @@
+.page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+button{
+    padding: 12px 16px;
+    margin: 0 15px;
+    border:1px solid #aaa;
+    border-radius:8px;
+    background-color: rgb(240, 227, 237);
+    cursor: pointer;
+    
+}
+button.active{
+    background-color: rgb(241, 245, 244);
+    color: rgb(70, 5, 5);
+}

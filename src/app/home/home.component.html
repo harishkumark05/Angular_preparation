@@ -1,6 +1,11 @@
+
 <nav>
-    <button (click)="page = 'eg-template-outlet'">Eg-template-outlet</button>
-    <button (click)="page = 'eg-onchanges'">Eg-template-outlet</button>
+    <button 
+    [class.active]="page==='eg-template-outlet'"
+    (click)="page = 'eg-template-outlet'"
+    >Eg-template-outlet</button>
+    <button
+    [class.active]="page==='eg-onchanges'" (click)="page = 'eg-onchanges'">Eg-template-outlet</button>
 
 </nav>
 

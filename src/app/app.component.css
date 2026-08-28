@@ -1,5 +1,6 @@
-.container{
-    margin: 30px auto;
-    padding: 30px;
-    width: 950px;
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }

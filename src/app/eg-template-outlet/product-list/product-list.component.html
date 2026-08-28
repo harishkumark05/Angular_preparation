@@ -1,0 +1,14 @@
+<div class="product-list">
+
+  <ng-container *ngFor="let product of products">
+
+    <ng-container
+      *ngTemplateOutlet="
+        itemTemplate;
+        context: { $implicit: product }
+      ">
+    </ng-container>
+
+  </ng-container>
+
+</div>
