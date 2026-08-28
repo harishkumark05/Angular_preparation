@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./eg-onchanges.component.css']
 })
 export class EgOnchangesComponent {
-
+userId ='';
 }

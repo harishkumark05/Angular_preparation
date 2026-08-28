@@ -1,0 +1,8 @@
+input{
+padding: 10px;
+border: 1px solid blueviolet;
+border-radius: 6px
+}
+input:focus{
+    border-color: aquamarine;
+}

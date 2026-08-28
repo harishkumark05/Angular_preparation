@@ -1,0 +1,106 @@
+
+<div class="page">
+  <div class="user-card" *ngIf="user">
+
+    <!-- Header -->
+    <div class="card-header">
+      <div class="avatar">
+        {{ user.name.charAt(0) }}
+      </div>
+
+      <div>
+        <h1>{{ user.name }}</h1>
+        <p>@{{ user.username }}</p>
+      </div>
+    </div>
+
+    <!-- Personal Information -->
+    <div class="section">
+      <h2>👤 Personal Information</h2>
+
+      <div class="info-grid">
+        <div class="info-box email">
+          <span class="icon">📧</span>
+          <div>
+            <label>Email</label>
+            <p>{{ user.email }}</p>
+          </div>
+        </div>
+
+        <div class="info-box phone">
+          <span class="icon">📱</span>
+          <div>
+            <label>Phone</label>
+            <p>{{ user.phone }}</p>
+          </div>
+        </div>
+
+        <div class="info-box website">
+          <span class="icon">🌐</span>
+          <div>
+            <label>Website</label>
+            <p>{{ user.website }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="section address-section">
+      <h2>📍 Address</h2>
+
+      <div class="address-grid">
+        <div>
+          <label>Street</label>
+          <p>{{ user.address.street }}</p>
+        </div>
+
+        <div>
+          <label>Suite</label>
+          <p>{{ user.address.suite }}</p>
+        </div>
+
+        <div>
+          <label>City</label>
+          <p>{{ user.address.city }}</p>
+        </div>
+
+        <div>
+          <label>Zipcode</label>
+          <p>{{ user.address.zipcode }}</p>
+        </div>
+      </div>
+
+      <div class="coordinates">
+        <span>🌎</span>
+        <strong>Coordinates:</strong>
+        {{ user.address.geo.lat }},
+        {{ user.address.geo.lng }}
+      </div>
+    </div>
+
+    <!-- Company -->
+    <div class="section company-section">
+      <h2>🏢 Company</h2>
+
+      <div class="company-name">
+        {{ user.company.name }}
+      </div>
+
+      <div class="catchphrase">
+        "{{ user.company.catchPhrase }}"
+      </div>
+
+      <div class="business">
+        <strong>💼 Business:</strong>
+        {{ user.company.bs }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="errorMessage">
+  <p>An errorMessage</p>
+</div>

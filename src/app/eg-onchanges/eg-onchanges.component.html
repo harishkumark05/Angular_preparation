@@ -1,1 +1,4 @@
-<p>eg-onchanges works!</p>
+<h1>Ng-onChnages with user as you type</h1>
+<p>Note:Can also implement button with input</p>
+<input type="text" [(ngModel)]="userId" placeholder="User Id">
+<app-on-changes-child [userId]="userId"></app-on-changes-child>
