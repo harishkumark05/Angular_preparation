@@ -10,6 +10,8 @@ import { ProductListComponent } from './eg-template-outlet/product-list/product-
 import { EgTemplateOutletComponent } from './eg-template-outlet/eg-template-outlet.component';
 import { FormsModule } from '@angular/forms';
 import { OnChangesChildComponent } from './eg-onchanges/on-changes-child/on-changes-child.component';
+import { LivetrackingComponent } from './livetracking/livetracking.component';
+import { TruckMapComponent } from './livetracking/truck-map/truck-map.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { OnChangesChildComponent } from './eg-onchanges/on-changes-child/on-chan
     EgOnchangesComponent,
     ProductListComponent,
     EgTemplateOutletComponent,
-    OnChangesChildComponent
+    OnChangesChildComponent,
+    LivetrackingComponent,
+    TruckMapComponent
     
   ],
   imports: [

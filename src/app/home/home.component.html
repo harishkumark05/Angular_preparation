@@ -6,10 +6,13 @@
     >Eg-template-outlet</button>
     <button
     [class.active]="page==='eg-onchanges'" (click)="page = 'eg-onchanges'">Eg-template-outlet</button>
+    <button
+    [class.active]="page==='live-tracking'" (click)="page = 'live-tracking'">Live Tracking</button>
 
 </nav>
 
 <section>
     <app-eg-template-outlet *ngIf="page === 'eg-template-outlet'"></app-eg-template-outlet>
     <app-eg-onchanges *ngIf="page === 'eg-onchanges'"></app-eg-onchanges>
+    <app-livetracking *ngIf="page === 'live-tracking'"></app-livetracking>
 </section>

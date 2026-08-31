@@ -1,0 +1,12 @@
+
+{
+  "/traccar": {
+    "target": "https://demo.traccar.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/traccar": ""
+    },
+    "logLevel": "debug"
+  }
+}

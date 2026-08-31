@@ -1,0 +1,59 @@
+<div class="app">
+
+  <h1>🚚 Live Truck Tracking</h1>
+  <p>Use Traccer clinet with id, token see headers</p>
+
+  <p *ngIf="loading">
+    Connecting to Traccar...
+  </p>
+
+  <p
+    *ngIf="error"
+    class="error">
+
+    {{ error }}
+
+  </p>
+
+
+  <div
+    *ngIf="position"
+    class="location">
+
+    <div>
+      <strong>Device ID:</strong>
+      {{ position.deviceId }}
+    </div>
+
+    <div>
+      <strong>Latitude:</strong>
+      {{ position.latitude }}
+    </div>
+
+    <div>
+      <strong>Longitude:</strong>
+      {{ position.longitude }}
+    </div>
+
+    <div>
+      <strong>Speed:</strong>
+      {{ position.speed || 0 }}
+    </div>
+
+  </div>
+
+
+  <!--
+    Pass the position to child.
+    This is where ngOnChanges()
+    will be triggered.
+  -->
+
+  <app-truck-map
+    [position]="position">
+  </app-truck-map>
+
+</div>
+
+
+
