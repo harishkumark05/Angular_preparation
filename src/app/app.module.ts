@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { OnChangesChildComponent } from './eg-onchanges/on-changes-child/on-changes-child.component';
 import { LivetrackingComponent } from './livetracking/livetracking.component';
 import { TruckMapComponent } from './livetracking/truck-map/truck-map.component';
+import { DeliveryTrackingComponent } from './delivery-tracking/delivery-tracking.component';
+import { MapViewComponent } from './delivery-tracking/map-view/map-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TruckMapComponent } from './livetracking/truck-map/truck-map.component'
     EgTemplateOutletComponent,
     OnChangesChildComponent,
     LivetrackingComponent,
-    TruckMapComponent
+    TruckMapComponent,
+    DeliveryTrackingComponent,
+    MapViewComponent
     
   ],
   imports: [

@@ -1,0 +1,22 @@
+<div class="delivery-container">
+    <h3>Live Delivery Tracking </h3>
+    <P>All logic on UI just for learning</P>
+    <!-- API secret in env -->
+     <form (ngSubmit)="formSubmit()">
+        <label >Source</label>
+        <select name ="source" [(ngModel)]="source">
+            <option [ngValue]="null">--source--</option>
+            <option *ngFor="let location of locations" [ngValue]="location">{{location.name}}</option>
+        </select>
+        <label >Destination</label>
+        <select name="destination" [(ngModel)]="destination">
+            <option [ngValue]="null">--Destination--</option>
+            <option *ngFor="let location of locations" [ngValue]="location">{{location.name}}</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+     </form>
+     <div class="map-view-card" *ngIf="TrackingStarted">
+        <app-map-view [shipment]="shipmentTracking"></app-map-view>
+     </div>
+</div>

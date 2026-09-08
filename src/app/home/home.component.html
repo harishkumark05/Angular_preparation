@@ -8,6 +8,7 @@
     [class.active]="page==='eg-onchanges'" (click)="page = 'eg-onchanges'">Eg-template-outlet</button>
     <button
     [class.active]="page==='live-tracking'" (click)="page = 'live-tracking'">Live Tracking</button>
+    <button [class.active]="page === 'delivery-tracking'" (click)="page ='delivery-tracking'">Delivery Tracking</button>
 
 </nav>
 
@@ -15,4 +16,5 @@
     <app-eg-template-outlet *ngIf="page === 'eg-template-outlet'"></app-eg-template-outlet>
     <app-eg-onchanges *ngIf="page === 'eg-onchanges'"></app-eg-onchanges>
     <app-livetracking *ngIf="page === 'live-tracking'"></app-livetracking>
+    <app-delivery-tracking *ngIf="page === 'delivery-tracking'"></app-delivery-tracking>
 </section>
